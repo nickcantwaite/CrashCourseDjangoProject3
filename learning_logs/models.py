@@ -12,7 +12,7 @@ class Groups(models.Model):
 class Post(models.Model):
     """An informational post for the selected group."""
     groups = models.ForeignKey(
-        'groups' ,
+        'groups',
         on_delete=models.CASCADE,
     )
     text = models.TextField()

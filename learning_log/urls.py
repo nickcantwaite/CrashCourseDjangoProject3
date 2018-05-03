@@ -23,19 +23,21 @@ from django.conf.urls.static import static
 from django.conf import settings
 #from django.conf.urls import include
 
-
-
+import learning_logs.urls
+app_name = "learning_logs"
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-urlpatterns += [
-    path('learning_logs/', include('learning_logs.urls')),  # , namespace='learning_logs'
-]
+urlpatterns += learning_logs.urls.urlpatterns
+
+    #[
+    #path('learning_logs/', include('learning_logs.urls')),  # , namespace='learning_logs'
+#]
 
 #the site you are redirected to if you type 127.0.0.1:8000/
-urlpatterns += [
-    path('', RedirectView.as_view(url='/learning_logs/')),
-]
+#urlpatterns += [
+#    path('', RedirectView.as_view(url='/learning_logs/')),
+#]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
