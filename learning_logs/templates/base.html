@@ -1,6 +1,18 @@
-<p>
-    <a href="{% url 'index' %}">Home</a>
-    <a href="{% url 'groups' %}">Groups</a>
-</p>
+<background
+<head>
+    <!-- Add additional CSS in static file -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <p>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'groups' %}">Groups</a>
+    </p>
+</head>
+
+<body style="background-color:#ebf2fa;">
+
+</body>
+
 
 {% block content %}{% endblock content %}
